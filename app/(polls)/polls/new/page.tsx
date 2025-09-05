@@ -1,5 +1,4 @@
-import { Card, CardContent, CardFooter, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { PollForm } from "@/components/forms/PollForm";
 
 export default function NewPollPage() {
@@ -13,10 +12,7 @@ export default function NewPollPage() {
         <CardContent>
           <PollForm />
         </CardContent>
-        <CardFooter className="flex justify-end gap-2">
-          <Button variant="secondary">Cancel</Button>
-          <Button>Create</Button>
-        </CardFooter>
+        
       </Card>
     </main>
   );

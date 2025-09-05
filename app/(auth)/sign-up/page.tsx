@@ -1,9 +1,14 @@
 import Link from "next/link";
+import { redirect } from "next/navigation";
+import { createSupabaseServerClient } from "@/lib/supabase/server";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { SignUpForm } from "@/components/forms/SignUpForm";
 
-export default function SignUpPage() {
+export default async function SignUpPage() {
+  const supabase = await createSupabaseServerClient();
+  const { data: { user } } = await supabase.auth.getUser();
+  if (user) redirect("/polls");
   return (
     <div className="min-h-[80vh] w-full flex items-center justify-center p-4">
       <Card className="w-full max-w-sm">
